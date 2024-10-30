@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export function Hero() {
   return (
-    <div className="hero-section relative grid grid-cols-12 min-h-[90vh]">
+    <div className="hero-section relative grid grid-cols-12 min-h-[calc(100vh-var(--header-height))]">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-[#4A5D23]/5 bg-opacity-5">
         <div className="absolute inset-0" style={{
@@ -15,25 +15,25 @@ export function Hero() {
       </div>
 
       {/* Left Content */}
-      <div className="col-span-12 lg:col-span-6 flex flex-col justify-center px-4 lg:pl-24 relative z-10">
+      <div className="col-span-12 lg:col-span-6 flex flex-col justify-center px-4 lg:pl-24 relative z-10 py-8 sm:py-12">
         <div className="relative max-w-2xl mx-auto lg:mx-0">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="mb-12"
+            className="mb-8 sm:mb-12"
           >
-            <div className="flex items-center gap-4 mb-8">
-              <div className="w-24 h-[1px] bg-primary" />
-              <h2 className="text-lg tracking-wider text-primary font-light uppercase">
+            <div className="flex items-center gap-4 mb-6 sm:mb-8">
+              <div className="w-16 sm:w-24 h-[1px] bg-primary" />
+              <h2 className="text-base sm:text-lg tracking-wider text-primary font-light uppercase">
                 Discover Namibia
               </h2>
             </div>
-            <h1 className="mb-6">
+            <h1 className="mb-4 sm:mb-6">
               Your Journey,<br />
               <span className="text-primary">Your Adventure</span>
             </h1>
-            <p className="text-xl text-primary/80 max-w-xl leading-relaxed font-light">
+            <p className="text-lg sm:text-xl text-primary/80 max-w-xl leading-relaxed font-light">
               Experience the breathtaking landscapes and rich culture of Namibia with our premium 4x4 vehicles and expertly curated tours.
             </p>
           </motion.div>
@@ -42,9 +42,9 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="flex flex-col sm:flex-row gap-6 mb-12"
+            className="flex flex-col sm:flex-row gap-4 sm:gap-6 mb-8 sm:mb-12"
           >
-            <button className="btn btn-primary group">
+            <a href="#vehicles" className="btn btn-primary group">
               <span>View Our Fleet</span>
               <svg
                 className="w-5 h-5 transform transition-transform group-hover:translate-x-1"
@@ -59,8 +59,8 @@ export function Hero() {
                   d="M17 8l4 4m0 0l-4 4m4-4H3"
                 />
               </svg>
-            </button>
-            <button className="btn btn-outline group">
+            </a>
+            <a href="#tours" className="btn btn-outline group">
               <span>Explore Tours</span>
               <svg
                 className="w-5 h-5 transform transition-transform group-hover:translate-x-1"
@@ -75,14 +75,14 @@ export function Hero() {
                   d="M9 5l7 7-7 7"
                 />
               </svg>
-            </button>
+            </a>
           </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="flex items-center gap-8"
+            className="flex flex-col sm:flex-row gap-4 sm:gap-8"
           >
             <div className="flex items-center gap-2">
               <svg className="w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -101,7 +101,7 @@ export function Hero() {
       </div>
 
       {/* Right Content */}
-      <div className="col-span-12 lg:col-span-6 relative min-h-[50vh] lg:min-h-[90vh] mt-12 lg:mt-0">
+      <div className="col-span-12 lg:col-span-6 relative min-h-[40vh] sm:min-h-[50vh] lg:min-h-[calc(100vh-var(--header-height))] mt-8 lg:mt-0">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -109,7 +109,7 @@ export function Hero() {
           className="relative h-full"
         >
           <div className="absolute inset-0 lg:inset-x-12">
-            <div className="relative h-full rounded-3xl overflow-hidden shadow-2xl">
+            <div className="relative h-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl">
               {/* Gradient Overlay */}
               <div className="absolute inset-0 bg-gradient-to-tr from-primary/40 to-transparent z-10" />
               
@@ -123,6 +123,7 @@ export function Hero() {
                   style={{ objectFit: "cover" }}
                   className="next-image"
                   priority
+                  quality={85}
                 />
               </div>
 
@@ -138,7 +139,7 @@ export function Hero() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.8 }}
-        className="scroll-indicator"
+        className="scroll-indicator hidden sm:flex"
       >
         <div className="glass px-6 py-3 rounded-full flex flex-col items-center">
           <div className="text-primary text-sm uppercase tracking-wider font-light mb-2">

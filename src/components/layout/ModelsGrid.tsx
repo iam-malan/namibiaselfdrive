@@ -28,7 +28,7 @@ const models = [
       "Recovery Kit",
       "Dual Battery System"
     ],
-    image: "/images/safarisuv.jpg",
+    image: "/images/hilus.jpg",
     price: "From N$1,500/day"
   },
   {
@@ -54,7 +54,7 @@ const models = [
       "Satellite Phone",
       "Refrigerator"
     ],
-    image: "/images/safarisuv.jpg",
+    image: "/images/prado.jpg",
     price: "From N$2,200/day"
   }
 ];
@@ -143,6 +143,8 @@ export function ModelsGrid() {
                         src={model.image}
                         alt={model.name}
                         fill
+                        priority
+                        quality={75}
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         style={{ objectFit: "cover" }}
                         className="transition-transform duration-700 group-hover:scale-105"

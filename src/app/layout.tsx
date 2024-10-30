@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { GridBackground } from "@/components/layout/GridBackground";
 import "./globals.css";
 
 export const viewport: Viewport = {
@@ -33,6 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className="min-h-screen bg-background text-primary antialiased">
+        <GridBackground />
         {children}
       </body>
     </html>

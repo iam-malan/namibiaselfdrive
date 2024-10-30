@@ -22,7 +22,7 @@ const features = [
     ),
     title: "Unlimited Mileage",
     description:
-      "Explore Namibia without restrictions. All our rentals come with unlimited mileage.",
+      "Explore Namibia without restrictions. All our rentals come with unlimited mileage, giving you the freedom to discover every corner of this beautiful country.",
   },
   {
     id: 2,
@@ -43,7 +43,7 @@ const features = [
     ),
     title: "Comprehensive Insurance",
     description:
-      "Travel with peace of mind with our full coverage insurance plans.",
+      "Travel with complete peace of mind. Our comprehensive insurance plans cover you for any unexpected situations, ensuring a worry-free journey.",
   },
   {
     id: 3,
@@ -70,7 +70,7 @@ const features = [
     ),
     title: "24/7 Support",
     description:
-      "Round-the-clock roadside assistance and support throughout your journey.",
+      "Our dedicated support team is available around the clock. Whether you need roadside assistance or travel advice, we're always here to help.",
   },
   {
     id: 4,
@@ -91,7 +91,7 @@ const features = [
     ),
     title: "Flexible Options",
     description:
-      "Customizable pickup locations and vehicle setups to suit your needs.",
+      "Choose from multiple pickup locations and customize your vehicle setup. We adapt to your needs, making your journey exactly how you want it.",
   },
 ];
 
@@ -119,12 +119,14 @@ const itemVariants = {
 
 export function Features() {
   return (
-    <section className="story-section relative">
-      {/* Grid Background */}
+    <section className="story-section relative overflow-hidden">
+      {/* Background Elements */}
       <div className="absolute inset-0 grid grid-cols-12 gap-4 pointer-events-none">
         {Array.from({ length: 13 }).map((_, i) => (
-          <div key={i} className="w-[1px] h-full bg-[#4A5D23]/5" />
+          <div key={i} className="w-[1px] h-full bg-primary/5" />
         ))}
+        <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-background to-transparent" />
+        <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-background to-transparent" />
       </div>
 
       <div className="content-wrapper relative z-10">
@@ -133,44 +135,44 @@ export function Features() {
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
           variants={containerVariants}
+          className="max-w-7xl mx-auto"
         >
           <motion.div
             variants={itemVariants}
-            className="max-w-2xl mx-auto text-center mb-8"
+            className="max-w-2xl mx-auto text-center mb-16"
           >
-            <div className="flex items-center justify-center gap-4 mb-3">
-              <div className="w-24 h-[1px] bg-[#4A5D23]" />
-              <h2 className="text-lg tracking-wider text-[#4A5D23] font-light uppercase">
+            <div className="flex items-center justify-center gap-4 mb-6">
+              <div className="w-24 h-[1px] bg-primary" />
+              <h2 className="text-lg tracking-wider text-primary font-light uppercase">
                 Why Choose Us
               </h2>
-              <div className="w-24 h-[1px] bg-[#4A5D23]" />
+              <div className="w-24 h-[1px] bg-primary" />
             </div>
-            <h1 className="mb-3">
-              Experience the Difference
+            <h1 className="mb-6">
+              Experience the <span className="text-primary">Difference</span>
             </h1>
-            <p className="text-lg text-[#4A5D23]/80 font-light leading-relaxed">
+            <p className="text-xl text-primary/80 font-light leading-relaxed">
               Discover what makes Namibia Self Drive your ideal adventure partner
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {features.map((feature) => (
               <motion.div
                 key={feature.id}
                 variants={itemVariants}
-                className="group relative"
+                className="group"
               >
-                <div className="relative p-6 glass rounded-3xl shadow-soft transition-all duration-300 group-hover:shadow-lg group-hover:-translate-y-1">
-                  <div className="inline-flex items-center justify-center w-16 h-16 mb-4 text-[#4A5D23] opacity-80 group-hover:opacity-100 transition-opacity">
+                <div className="feature-card h-full">
+                  <div className="inline-flex items-center justify-center w-16 h-16 mb-6 text-primary opacity-80 group-hover:opacity-100 transition-opacity">
                     {feature.icon}
                   </div>
-                  <h3 className="text-xl font-light text-[#4A5D23] mb-2 tracking-tight">
+                  <h3 className="text-xl font-light text-primary mb-4 tracking-tight">
                     {feature.title}
                   </h3>
-                  <p className="text-[#4A5D23]/70 font-light leading-relaxed">
+                  <p className="text-primary/70 font-light leading-relaxed">
                     {feature.description}
                   </p>
-                  <div className="absolute inset-0 border border-[#4A5D23]/10 group-hover:border-[#4A5D23]/30 rounded-3xl transition-colors duration-300" />
                 </div>
               </motion.div>
             ))}
@@ -178,10 +180,10 @@ export function Features() {
 
           <motion.div
             variants={itemVariants}
-            className="mt-8 text-center"
+            className="mt-16 text-center"
           >
-            <button className="btn btn-primary inline-flex items-center gap-3 group">
-              <span>View Our Vehicle Fleet</span>
+            <a href="#vehicles" className="btn btn-primary inline-flex items-center gap-3 group">
+              <span>Explore Our Vehicles</span>
               <svg
                 className="w-5 h-5 transform transition-transform group-hover:translate-x-1"
                 fill="none"
@@ -192,10 +194,10 @@ export function Features() {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth={1.5}
-                  d="M9 5l7 7-7 7"
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
                 />
               </svg>
-            </button>
+            </a>
           </motion.div>
         </motion.div>
       </div>

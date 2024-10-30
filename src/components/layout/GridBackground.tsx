@@ -1,36 +1,33 @@
 "use client";
 
-export const GridBackground = () => {
-  // Create an array of measurements matching the Safari Condo grid
-  const measurements = [
-    "28°", "45°", "64°", "90°", "90°", "120°", "145°", "56°"
-  ];
-
+export function GridBackground() {
   return (
-    <div className="absolute inset-0 grid grid-cols-8 pointer-events-none">
-      {/* Vertical lines */}
-      {Array.from({ length: 9 }).map((_, i) => (
-        <div key={`line-${i}`} className="relative">
-          {/* Vertical line */}
-          <div className="absolute top-0 left-0 w-[1px] h-full bg-[#4A5D23]/5" />
-          
-          {/* Measurement text - only show on first row */}
-          {i < measurements.length && (
-            <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 text-[#4A5D23]/30 text-xs">
-              {measurements[i]}
-            </div>
-          )}
-        </div>
-      ))}
+    <div className="fixed inset-0 -z-10 pointer-events-none">
+      {/* Base Background */}
+      <div className="absolute inset-0 bg-[#F5F5F0]" />
 
-      {/* Horizontal lines */}
-      {Array.from({ length: 6 }).map((_, i) => (
-        <div
-          key={`horizontal-${i}`}
-          className="absolute left-0 right-0 h-[1px] bg-[#4A5D23]/5"
-          style={{ top: `${(i + 1) * (100 / 6)}%` }}
+      {/* Grid Pattern */}
+      <div 
+        className="absolute inset-0"
+        style={{
+          backgroundImage: `
+            linear-gradient(to right, rgba(74, 93, 35, 0.1) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(74, 93, 35, 0.1) 1px, transparent 1px)
+          `,
+          backgroundSize: '20px 20px',
+          backgroundPosition: 'center center'
+        }}
+      >
+        {/* Dots */}
+        <div 
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `radial-gradient(circle at center, rgba(74, 93, 35, 0.15) 1.5px, transparent 1.5px)`,
+            backgroundSize: '20px 20px',
+            backgroundPosition: 'center center'
+          }}
         />
-      ))}
+      </div>
     </div>
   );
-};
+}

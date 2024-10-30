@@ -1,13 +1,13 @@
-import { useEffect } from "react";
+import { useCallback } from "react";
 
 export function useLocomotiveScroll() {
-  useEffect(() => {
-    (async () => {
-      if (typeof window === "undefined") return;
-      
+  const initScroll = useCallback(async (container: HTMLElement) => {
+    if (typeof window === "undefined") return;
+    
+    try {
       const LocomotiveScroll = (await import("locomotive-scroll")).default;
       const scroll = new LocomotiveScroll({
-        el: document.querySelector("[data-scroll-container]") as HTMLElement,
+        el: container,
         smooth: true,
         multiplier: 1,
         lerp: 0.1,
@@ -22,6 +22,10 @@ export function useLocomotiveScroll() {
       return () => {
         scroll.destroy();
       };
-    })();
+    } catch (error) {
+      console.error("Failed to initialize scroll:", error);
+    }
   }, []);
+
+  return { initScroll };
 }

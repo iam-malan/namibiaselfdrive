@@ -3,29 +3,125 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --scroll-progress: 0;
-  }
-
   html {
-    @apply scroll-smooth;
+    scroll-behavior: smooth;
   }
 
   body {
-    @apply bg-[#F5F5F0] text-[#4A5D23] antialiased overflow-x-hidden;
+    @apply bg-[#F5F5F0] text-[#4A5D23] font-light;
   }
+
+  h1 {
+    @apply text-6xl font-light tracking-tight text-[#2c2c2c] leading-tight;
+  }
+
+  h2 {
+    @apply text-4xl font-light tracking-tight text-[#2c2c2c] leading-relaxed;
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply text-[#4A5D23] hover:text-[#3A4D13] transition-all duration-300 flex items-center gap-1;
+  }
+
+  .nav-number {
+    @apply text-xs text-[#4A5D23]/60 font-light;
+  }
+
+  .nav-text {
+    @apply text-sm tracking-[0.1em] uppercase font-light;
+  }
+
+  .nav-arrow {
+    @apply text-[#4A5D23]/60 ml-0.5;
+  }
+
+  .store-button {
+    @apply bg-white text-[#4A5D23] rounded-full py-2 pl-6 pr-4 flex items-center gap-2 hover:bg-gray-50 transition-colors;
+  }
+
+  .store-button-text {
+    @apply text-sm tracking-[0.1em] uppercase font-light;
+  }
+
+  .store-button-arrow {
+    @apply w-5 h-5 flex items-center justify-center rounded-full border border-[#4A5D23] ml-1;
+  }
+
+  .grid-section {
+    @apply relative min-h-[600px];
+  }
+
+  .grid-content {
+    @apply relative z-10 h-full flex items-center;
+  }
+
+  .grid-block {
+    @apply relative bg-white rounded-3xl shadow-soft overflow-hidden;
+    height: calc(100% - 2rem);
+    margin: 1rem;
+  }
+
+  .grid-block-content {
+    @apply p-8 h-full flex flex-col justify-between;
+  }
+
+  .btn {
+    @apply rounded-full transition-all duration-300 uppercase tracking-wider text-sm px-8 py-4;
+  }
+
+  .btn-primary {
+    @apply bg-[#4A5D23] text-white hover:bg-[#3A4D13] shadow-md hover:shadow-lg transform hover:-translate-y-0.5;
+  }
+
+  .btn-outline {
+    @apply border-2 border-[#4A5D23] text-[#4A5D23] hover:bg-[#4A5D23] hover:text-white shadow-md hover:shadow-lg transform hover:-translate-y-0.5;
+  }
+
+  .content-wrapper {
+    @apply max-w-[1400px] mx-auto px-8;
+  }
+
+  .hero-section {
+    @apply min-h-screen flex items-center relative bg-gradient-to-b from-white/90 to-white/70;
+  }
+
+  .nav-fixed {
+    @apply fixed top-0 left-0 w-full z-50 bg-[#E5E5E0] shadow-md transition-all duration-300;
+  }
+
+  .scroll-indicator {
+    @apply absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce;
+  }
+
+  .timeline {
+    @apply relative py-8;
+  }
+
+  .timeline::before {
+    content: '';
+    @apply absolute left-1/2 w-0.5 h-full bg-[#FF5F3D] -translate-x-1/2;
+  }
+
+  .story-section {
+    @apply py-6 bg-[#f8f8f8];
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
 }
 
 /* Locomotive Scroll */
 html.has-scroll-smooth {
   overflow: hidden;
-}
-
-html.has-scroll-dragging {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
 }
 
 .has-scroll-smooth body {
@@ -36,7 +132,6 @@ html.has-scroll-dragging {
   min-height: 100vh;
 }
 
-/* Scroll Animations */
 [data-scroll] {
   will-change: transform;
 }
@@ -44,44 +139,18 @@ html.has-scroll-dragging {
 [data-scroll-section] {
   position: relative;
   width: 100%;
-  min-height: 100vh;
-  padding: 2rem 0;
+  padding: 0.5rem 0;
 }
 
-/* Typography */
-h1, h2, h3, h4, h5, h6 {
-  @apply font-medium tracking-tight;
+/* Modern Shadows */
+.shadow-soft {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 
+              0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
-/* Buttons */
-.btn {
-  @apply rounded-full transition-colors duration-200;
-}
-
-.btn-primary {
-  @apply bg-[#4A5D23] text-white hover:bg-[#3A4D13];
-}
-
-.btn-outline {
-  @apply border-2 border-[#4A5D23] text-[#4A5D23] hover:bg-[#4A5D23] hover:text-white;
-}
-
-/* Navigation */
-.nav-link {
-  @apply text-[#4A5D23] hover:text-[#FF5F3D] transition-colors;
-}
-
-/* Smooth transitions */
-.transition-all {
-  @apply duration-200 ease-in-out;
-}
-
-/* Hide scrollbar */
-.hide-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-.hide-scrollbar::-webkit-scrollbar {
-  display: none;
+/* Glass Effect */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }

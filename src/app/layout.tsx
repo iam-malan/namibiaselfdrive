@@ -1,18 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import localFont from 'next/font/local';
 import "./globals.css";
-import { cn } from "../lib/utils";
-
-const geist = localFont({
-  src: [
-    {
-      path: './fonts/GeistVF.woff',
-      weight: '400',
-      style: 'normal',
-    },
-  ],
-  variable: '--font-geist',
-});
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -25,12 +12,12 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Safari Condo - Adventure Awaits",
-  description: "Discover the perfect blend of comfort and adventure with our premium RV solutions designed for the modern explorer.",
+  title: "Namibia Self Drive - Adventure Awaits",
+  description: "Discover the perfect blend of comfort and adventure with our premium 4x4 solutions designed for the modern explorer.",
   keywords: [
-    "Safari Condo",
-    "RV",
-    "Camping",
+    "Namibia Self Drive",
+    "4x4",
+    "Safari",
     "Travel",
     "Adventure",
     "Outdoor",
@@ -44,8 +31,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={cn("scroll-smooth", geist.variable)}>
-      <body className="bg-[#F5F5F0] text-foreground antialiased">
+    <html lang="en" className="scroll-smooth">
+      <body className="min-h-screen bg-background text-primary antialiased">
         {children}
       </body>
     </html>

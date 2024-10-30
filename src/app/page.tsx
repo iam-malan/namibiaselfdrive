@@ -1,54 +1,24 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import { Features } from "@/components/layout/Features";
-import { Footer } from "@/components/layout/Footer";
-import { GridBackground } from "@/components/layout/GridBackground";
-import { Header } from "@/components/layout/Header";
-import { Hero } from "@/components/layout/Hero";
-import { ModelsGrid } from "@/components/layout/ModelsGrid";
-import { ScrollProgressLine } from "@/components/layout/ScrollProgressLine";
+import { useEffect, useRef } from 'react';
+import { Header } from '@/components/layout/Header';
+import { Hero } from '@/components/layout/Hero';
+import { Features } from '@/components/layout/Features';
+import { ModelsGrid } from '@/components/layout/ModelsGrid';
+import { Footer } from '@/components/layout/Footer';
+import { GridBackground } from '@/components/layout/GridBackground';
+import { ScrollProgressLine } from '@/components/layout/ScrollProgressLine';
+import { useLocomotiveScroll } from '@/lib/hooks/useLocomotiveScroll';
 
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const { initScroll } = useLocomotiveScroll();
 
   useEffect(() => {
-    if (typeof window === "undefined") return;
-
-    const initScroll = async () => {
-      try {
-        const LocomotiveScroll = (await import("locomotive-scroll")).default;
-        
-        if (!containerRef.current) return;
-
-        const scroll = new LocomotiveScroll({
-          el: containerRef.current,
-          smooth: true,
-          smoothMobile: true,
-          multiplier: 1,
-          lerp: 0.1,
-          class: "is-revealed",
-        });
-
-        scroll.on("scroll", (args: any) => {
-          if (typeof args.scroll?.y === 'number') {
-            document.documentElement.style.setProperty(
-              "--scroll-progress",
-              args.scroll.y.toString()
-            );
-          }
-        });
-
-        return () => {
-          scroll.destroy();
-        };
-      } catch (error) {
-        console.error("Failed to initialize scroll:", error);
-      }
-    };
-
-    initScroll();
-  }, []);
+    if (containerRef.current) {
+      initScroll(containerRef.current);
+    }
+  }, [initScroll]);
 
   return (
     <main className="relative min-h-screen bg-[#F5F5F0]">

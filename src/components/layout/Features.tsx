@@ -100,7 +100,7 @@ const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.2,
+      staggerChildren: 0.15,
     },
   },
 };
@@ -111,15 +111,15 @@ const itemVariants = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.5,
-      ease: "easeOut",
+      duration: 0.6,
+      ease: [0.215, 0.610, 0.355, 1.000],
     },
   },
 };
 
 export function Features() {
   return (
-    <section className="relative py-24 bg-[#F5F5F0]">
+    <section className="story-section relative">
       {/* Grid Background */}
       <div className="absolute inset-0 grid grid-cols-12 gap-4 pointer-events-none">
         {Array.from({ length: 13 }).map((_, i) => (
@@ -127,65 +127,63 @@ export function Features() {
         ))}
       </div>
 
-      <div className="container mx-auto px-8 relative z-10">
+      <div className="content-wrapper relative z-10">
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true, margin: "-50px" }}
           variants={containerVariants}
-          className="max-w-7xl mx-auto"
         >
           <motion.div
             variants={itemVariants}
-            className="max-w-2xl mx-auto text-center mb-16"
+            className="max-w-2xl mx-auto text-center mb-8"
           >
-            <div className="flex items-center justify-center gap-4 mb-4">
-              <div className="w-24 h-[2px] bg-[#4A5D23]" />
-              <h2 className="text-xl text-[#4A5D23] font-medium">
-                WHY CHOOSE US
+            <div className="flex items-center justify-center gap-4 mb-3">
+              <div className="w-24 h-[1px] bg-[#4A5D23]" />
+              <h2 className="text-lg tracking-wider text-[#4A5D23] font-light uppercase">
+                Why Choose Us
               </h2>
-              <div className="w-24 h-[2px] bg-[#4A5D23]" />
+              <div className="w-24 h-[1px] bg-[#4A5D23]" />
             </div>
-            <h3 className="text-4xl font-bold mb-4 text-[#4A5D23]">
+            <h1 className="mb-3">
               Experience the Difference
-            </h3>
-            <p className="text-[#4A5D23]/80">
+            </h1>
+            <p className="text-lg text-[#4A5D23]/80 font-light leading-relaxed">
               Discover what makes Namibia Self Drive your ideal adventure partner
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {features.map((feature) => (
               <motion.div
                 key={feature.id}
                 variants={itemVariants}
-                whileHover={{ y: -10 }}
-                className="relative p-8 bg-white rounded-3xl border border-[#4A5D23]/10 shadow-lg"
+                className="group relative"
               >
-                <div className="inline-flex items-center justify-center w-16 h-16 mb-6 text-[#4A5D23]">
-                  {feature.icon}
+                <div className="relative p-6 glass rounded-3xl shadow-soft transition-all duration-300 group-hover:shadow-lg group-hover:-translate-y-1">
+                  <div className="inline-flex items-center justify-center w-16 h-16 mb-4 text-[#4A5D23] opacity-80 group-hover:opacity-100 transition-opacity">
+                    {feature.icon}
+                  </div>
+                  <h3 className="text-xl font-light text-[#4A5D23] mb-2 tracking-tight">
+                    {feature.title}
+                  </h3>
+                  <p className="text-[#4A5D23]/70 font-light leading-relaxed">
+                    {feature.description}
+                  </p>
+                  <div className="absolute inset-0 border border-[#4A5D23]/10 group-hover:border-[#4A5D23]/30 rounded-3xl transition-colors duration-300" />
                 </div>
-                <h3 className="text-xl font-bold text-[#4A5D23] mb-4">
-                  {feature.title}
-                </h3>
-                <p className="text-[#4A5D23]/80">{feature.description}</p>
-                <div className="absolute inset-0 border-2 border-transparent hover:border-[#4A5D23] rounded-3xl transition-colors duration-300" />
               </motion.div>
             ))}
           </div>
 
           <motion.div
             variants={itemVariants}
-            className="mt-16 text-center"
+            className="mt-8 text-center"
           >
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center justify-center px-8 py-3 text-lg font-medium text-white bg-[#4A5D23] rounded-full hover:bg-[#3A4D13] transition-colors"
-            >
-              View Our Vehicle Fleet
+            <button className="btn btn-primary inline-flex items-center gap-3 group">
+              <span>View Our Vehicle Fleet</span>
               <svg
-                className="w-5 h-5 ml-2"
+                className="w-5 h-5 transform transition-transform group-hover:translate-x-1"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -193,11 +191,11 @@ export function Features() {
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  strokeWidth={2}
+                  strokeWidth={1.5}
                   d="M9 5l7 7-7 7"
                 />
               </svg>
-            </motion.button>
+            </button>
           </motion.div>
         </motion.div>
       </div>

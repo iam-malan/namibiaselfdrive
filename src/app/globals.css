@@ -2,20 +2,86 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --scroll-progress: 0;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-[#F5F5F0] text-[#4A5D23] antialiased overflow-x-hidden;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+/* Locomotive Scroll */
+html.has-scroll-smooth {
+  overflow: hidden;
+}
+
+html.has-scroll-dragging {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.has-scroll-smooth body {
+  overflow: hidden;
+}
+
+.has-scroll-smooth [data-scroll-container] {
+  min-height: 100vh;
+}
+
+/* Scroll Animations */
+[data-scroll] {
+  will-change: transform;
+}
+
+[data-scroll-section] {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 2rem 0;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  @apply font-medium tracking-tight;
+}
+
+/* Buttons */
+.btn {
+  @apply rounded-full transition-colors duration-200;
+}
+
+.btn-primary {
+  @apply bg-[#4A5D23] text-white hover:bg-[#3A4D13];
+}
+
+.btn-outline {
+  @apply border-2 border-[#4A5D23] text-[#4A5D23] hover:bg-[#4A5D23] hover:text-white;
+}
+
+/* Navigation */
+.nav-link {
+  @apply text-[#4A5D23] hover:text-[#FF5F3D] transition-colors;
+}
+
+/* Smooth transitions */
+.transition-all {
+  @apply duration-200 ease-in-out;
+}
+
+/* Hide scrollbar */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
 }

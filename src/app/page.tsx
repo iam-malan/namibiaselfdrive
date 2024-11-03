@@ -416,3 +416,54 @@ export default function Home() {
     </main>
   );
 }
+
+
+export default function Home() {
+  return (
+    <main className="relative min-h-screen">
+      <Header />
+      <ScrollProgressLine />
+      
+      <section id="hero" className="pt-0">
+        <Hero />
+      </section>
+
+      <section id="camping-vehicles">
+        <VehicleSection
+          title="Premium 4x4 Vehicles with Camping Equipment"
+          subtitle="Fully Equipped Luxury 4x4 Vehicles with camping gear and rooftop tents, perfect for family adventures."
+          vehicles={campingVehicles}
+        />
+      </section>
+
+      <section id="luxury-vehicles">
+        <VehicleSection
+          title="Luxury 4x4 Vehicles"
+          subtitle="Our Premium Luxury 4x4 Vehicles, combining luxury & comfort with exceptional off-road capabilities."
+          vehicles={luxuryVehicles}
+        />
+      </section>
+
+      <section id="optional-extras">
+        <OptionalExtras extras={optionalExtras} />
+      </section>
+
+      <section id="rental-rates">
+        <RentalRates
+          periods={rentalPeriods}
+          insuranceOptions={insuranceOptions}
+        />
+      </section>
+
+      <section id="faq">
+        <FAQ faqs={faqs} />
+      </section>
+
+      <section id="testimonials">
+        <Testimonials />
+      </section>
+
+      <Footer />
+    </main>
+  );
+}

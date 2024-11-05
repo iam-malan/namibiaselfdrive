@@ -226,32 +226,6 @@ const luxuryVehicles = [
   }
 ];
 
-const optionalExtras = [
-  { name: "Ground Tent (Includes 1 x Mattress)", price: "N$ 120 p/d" },
-  { name: "Mattress", price: "N$ 20 p/d" },
-  { name: "Big Tent (140cm x 240cm)", price: "Available Upon Request" },
-  { name: "Family Tent (200cm x 240cm)", price: "Available Upon Request" },
-  { name: "GPS", price: "N$ 100 p/d" },
-  { name: "Sat Phone", price: "N$ 170 p/d" },
-  { name: "Baby Seat", price: "N$ 100 p/d" },
-  { name: "Baby Booster", price: "N$ 90 p/d" },
-  { name: "Chemical Toilet", price: "N$ 80 p/d" },
-  { name: "Water Canister", price: "N$ 30 p/d" },
-  { name: "Shovel", price: "N$ 100 per trip" },
-  { name: "Ground Sheet", price: "N$ 30 p/d" },
-  { name: "Gazebo", price: "N$ 100 p/d" },
-  { name: "Plastic Coolbox", price: "N$ 40 p/d" },
-  { name: "Wash Basin", price: "N$ 30 p/d" },
-  { name: "Gas Light", price: "N$ 80 p/d" },
-  { name: "Potjie", price: "N$ 45 p/d" },
-  { name: "Bush Shower", price: "N$ 600 per trip" },
-  { name: "Sandtracks", price: "N$ 650 per trip" },
-  { name: "Kitchen Wash Box", price: "N$ 650 per trip" },
-  { name: "Sleeping Gear Package", price: "N$ 30 per person per day" },
-  { name: "Personal Amenities Package", price: "N$ 20 per person per day" },
-  { name: "Internet (Built-in Car WiFi)", price: "N$ 300 per trip" }
-];
-
 const rentalPeriods = [
   { season: "December-March (15+ Days)", rate: "N$ 1,597" },
   { season: "April/May/June/Nov (8-14 Days)", rate: "N$ 1,936" },
@@ -358,7 +332,7 @@ export default function Home() {
       </section>
 
       <section id="optional-extras">
-        <OptionalExtras extras={optionalExtras} />
+        <OptionalExtras />
       </section>
 
       <section id="rental-rates">

@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 export const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -41,16 +42,18 @@ export const Header = () => {
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
+    if (window.location.pathname !== '/') {
+      window.location.href = `/#${id}`;
+      return;
+    }
     scrollToSection(id);
   };
 
   const navItems = [
-    ['01', 'ABOUT', 'about'],
-    ['02', 'VEHICLES', 'vehicles'],
-    ['03', 'FEATURES', 'features'],
-    ['04', 'TOURS', 'tours'],
-    ['05', 'TESTIMONIALS', 'testimonials'],
-    ['06', 'CONTACT', 'contact']
+    ['01', 'VEHICLES', 'camping-vehicles'],
+    ['02', 'PRICING', 'rental-rates'],
+    ['03', 'FAQ', 'faq'],
+    ['04', 'TESTIMONIALS', 'testimonials']
   ];
 
   return (
@@ -61,12 +64,9 @@ export const Header = () => {
       style={{ height: 'var(--header-height)' }}
     >
       <nav className="content-wrapper h-full flex items-center justify-between">
-        <motion.a 
-          href="#hero"
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
+        <Link 
+          href="/"
           className="relative z-10 flex items-center gap-2 md:gap-3 group"
-          onClick={(e) => handleClick(e, 'hero')}
         >
           <div className="w-8 h-8 md:w-10 md:h-10 relative">
             <Image
@@ -79,7 +79,7 @@ export const Header = () => {
           <span className="text-primary text-lg md:text-xl tracking-tight font-light">
             Namibia Self Drive
           </span>
-        </motion.a>
+        </Link>
 
         {/* Desktop Navigation */}
         <div className="hidden lg:flex items-center gap-10">
@@ -98,6 +98,11 @@ export const Header = () => {
               <span className="nav-arrow">›</span>
             </motion.a>
           ))}
+          <Link href="/contact" className="nav-link">
+            <span className="nav-number">05</span>
+            <span className="nav-text">CONTACT</span>
+            <span className="nav-arrow">›</span>
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -129,10 +134,9 @@ export const Header = () => {
           transition={{ delay: 0.2 }}
           className="hidden lg:block"
         >
-          <a 
-            href="#contact"
+          <Link 
+            href="/contact"
             className="store-button group"
-            onClick={(e) => handleClick(e, 'contact')}
           >
             <span className="store-button-text">BOOK NOW</span>
             <span className="store-button-arrow group-hover:translate-x-0.5">
@@ -152,7 +156,7 @@ export const Header = () => {
                 />
               </svg>
             </span>
-          </a>
+          </Link>
         </motion.div>
       </nav>
 
@@ -179,10 +183,17 @@ export const Header = () => {
                     <span className="nav-arrow">›</span>
                   </a>
                 ))}
-                <a 
-                  href="#contact"
+                <Link 
+                  href="/contact"
+                  className="nav-link text-base"
+                >
+                  <span className="nav-number">05</span>
+                  <span className="nav-text">CONTACT</span>
+                  <span className="nav-arrow">›</span>
+                </Link>
+                <Link 
+                  href="/contact"
                   className="store-button mt-2 w-full justify-center"
-                  onClick={(e) => handleClick(e, 'contact')}
                 >
                   <span className="store-button-text">BOOK NOW</span>
                   <span className="store-button-arrow">
@@ -202,7 +213,7 @@ export const Header = () => {
                       />
                     </svg>
                   </span>
-                </a>
+                </Link>
               </div>
             </div>
           </motion.div>

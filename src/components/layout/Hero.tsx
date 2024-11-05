@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 export const Hero = () => {
   return (
@@ -106,16 +107,24 @@ export const Hero = () => {
           transition={{ duration: 0.8 }}
           className="relative"
         >
-          <div className="relative h-full rounded-3xl overflow-hidden shadow-2xl">
+          <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
             <div className="absolute inset-0 bg-gradient-to-tr from-primary/30 to-transparent z-10" />
-            <motion.img
+            <motion.div
               initial={{ scale: 1.2 }}
               animate={{ scale: 1 }}
               transition={{ duration: 1.5 }}
-              src="/images/flux landy.png"
-              alt="Land Rover in Namibian landscape"
-              className="w-full h-full object-cover"
-            />
+              className="relative w-full h-full"
+            >
+              <Image
+                src="/images/flux landy.png"
+                alt="Land Rover in Namibian landscape"
+                fill
+                priority
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover"
+                quality={90}
+              />
+            </motion.div>
           </div>
         </motion.div>
       </div>

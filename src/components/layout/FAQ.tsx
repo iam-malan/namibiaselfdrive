@@ -2,28 +2,27 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-
-interface FAQItem {
-  question: string;
-  answer: string;
-}
+import Link from 'next/link';
 
 interface FAQProps {
-  faqs: FAQItem[];
+  faqs: {
+    question: string;
+    answer: string;
+  }[];
 }
 
-const FAQItem = ({ faq }: { faq: FAQItem }) => {
+const FAQItem = ({ question, answer }: { question: string; answer: string }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div className="feature-card overflow-hidden">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex justify-between items-center text-left py-4 px-6"
+        className="w-full flex justify-between items-start gap-4 p-6 text-left"
       >
-        <span className="text-lg text-primary">{faq.question}</span>
+        <h3 className="text-lg text-primary">{question}</h3>
         <svg
-          className={`w-6 h-6 text-primary/60 transform transition-transform ${
+          className={`w-6 h-6 text-primary/60 transform transition-transform flex-shrink-0 ${
             isOpen ? 'rotate-180' : ''
           }`}
           fill="none"
@@ -47,8 +46,29 @@ const FAQItem = ({ faq }: { faq: FAQItem }) => {
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3 }}
           >
-            <div className="px-6 pb-4">
-              <p className="text-primary/80 leading-relaxed">{faq.answer}</p>
+            <div className="px-6 pb-6">
+              <p className="text-primary/80 leading-relaxed mb-6">{answer}</p>
+              {question === "Can I add additional camping gear to my rental?" && (
+                <Link 
+                  href="/optional-equipment"
+                  className="inline-flex items-center gap-2 btn btn-primary group"
+                >
+                  <span>View Optional Equipment</span>
+                  <svg
+                    className="w-5 h-5 transform transition-transform group-hover:translate-x-1"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={1.5}
+                      d="M17 8l4 4m0 0l-4 4m4-4H3"
+                    />
+                  </svg>
+                </Link>
+              )}
             </div>
           </motion.div>
         )}
@@ -71,15 +91,12 @@ export const FAQ = ({ faqs }: FAQProps) => {
           <div className="flex items-center justify-center gap-4 mb-6">
             <div className="w-24 h-[1px] bg-primary" />
             <h2 className="text-lg tracking-wider text-primary font-light uppercase">
-              FAQ
+              Frequently Asked Questions
             </h2>
             <div className="w-24 h-[1px] bg-primary" />
           </div>
-          <h1 className="mb-6">
-            Frequently Asked <span className="text-primary">Questions</span>
-          </h1>
           <p className="text-xl text-primary/80 font-light leading-relaxed max-w-3xl mx-auto">
-            Find answers to common questions about our vehicle rentals and services
+            Find answers to common questions about our rental services
           </p>
         </motion.div>
 
@@ -92,7 +109,7 @@ export const FAQ = ({ faqs }: FAQProps) => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
             >
-              <FAQItem faq={faq} />
+              <FAQItem question={faq.question} answer={faq.answer} />
             </motion.div>
           ))}
         </div>

@@ -89,15 +89,15 @@ export const RentalRates = ({ periods, insuranceOptions }: RentalRatesProps) => 
           >
             <div className="feature-card">
               <h3 className="text-2xl text-primary mb-6">Insurance Options</h3>
-              <div className="overflow-x-auto">
-                <table className="w-full">
+              <div className="overflow-x-auto -mx-4 sm:mx-0">
+                <table className="w-full text-sm sm:text-base">
                   <thead>
                     <tr className="border-b border-primary/20">
-                      <th className="py-4 px-2 text-left text-primary">Option</th>
-                      <th className="py-4 px-2 text-right text-primary">Daily Rate</th>
-                      <th className="py-4 px-2 text-right text-primary">Deposit</th>
-                      <th className="py-4 px-2 text-center text-primary">Glass</th>
-                      <th className="py-4 px-2 text-center text-primary">Tyres</th>
+                      <th className="py-3 px-1 sm:px-2 text-left text-primary">Option</th>
+                      <th className="py-3 px-1 sm:px-2 text-right text-primary">Rate</th>
+                      <th className="py-3 px-1 sm:px-2 text-right text-primary">Deposit</th>
+                      <th className="py-3 px-1 sm:px-2 text-center text-primary">Glass</th>
+                      <th className="py-3 px-1 sm:px-2 text-center text-primary">Tyres</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -106,17 +106,17 @@ export const RentalRates = ({ periods, insuranceOptions }: RentalRatesProps) => 
                         key={option.name}
                         className="border-b border-primary/10 last:border-0"
                       >
-                        <td className="py-4 px-2 text-primary/80">{option.name}</td>
-                        <td className="py-4 px-2 text-right text-primary/80">
+                        <td className="py-3 px-1 sm:px-2 text-primary/80">{option.name}</td>
+                        <td className="py-3 px-1 sm:px-2 text-right text-primary/80">
                           {option.dailyRate}
                         </td>
-                        <td className="py-4 px-2 text-right text-primary/80">
+                        <td className="py-3 px-1 sm:px-2 text-right text-primary/80">
                           {option.deposit}
                         </td>
-                        <td className="py-4 px-2 text-center text-primary/80">
+                        <td className="py-3 px-1 sm:px-2 text-center text-primary/80">
                           {option.glassCover}
                         </td>
-                        <td className="py-4 px-2 text-center text-primary/80">
+                        <td className="py-3 px-1 sm:px-2 text-center text-primary/80">
                           {option.tyresCover}
                         </td>
                       </tr>

@@ -6,15 +6,11 @@ import Image from "next/image";
 const footerLinks = {
   company: [
     { name: "About Us", href: "#about" },
-    { name: "Our Team", href: "#team" },
-    { name: "Careers", href: "#careers" },
-    { name: "Press", href: "#press" }
+    { name: "Our Team", href: "#team" }
   ],
   services: [
     { name: "Vehicle Rentals", href: "#vehicles" },
-    { name: "Guided Tours", href: "#tours" },
-    { name: "Custom Routes", href: "#routes" },
-    { name: "Group Bookings", href: "#groups" }
+    { name: "Self-Drive Tours", href: "#tours" }
   ],
   support: [
     { name: "Contact Us", href: "#contact" },

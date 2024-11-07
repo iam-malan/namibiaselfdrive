@@ -27,7 +27,7 @@ export const Hero = () => {
           </p>
           <div className="flex flex-wrap gap-4">
             <a
-              href="#vehicles"
+              href="#camping-vehicles"
               className="btn btn-primary group"
             >
               <span>VIEW OUR FLEET</span>
@@ -107,8 +107,8 @@ export const Hero = () => {
           transition={{ duration: 0.8 }}
           className="relative"
         >
-          <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
-            <div className="absolute inset-0 bg-gradient-to-tr from-primary/30 to-transparent z-10" />
+          <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br from-primary/5 to-primary/10">
+            <div className="absolute inset-0 bg-gradient-to-tr from-primary/30 via-primary/20 to-transparent z-10" />
             <motion.div
               initial={{ scale: 1.2 }}
               animate={{ scale: 1 }}
@@ -116,25 +116,27 @@ export const Hero = () => {
               className="relative w-full h-full"
             >
               <Image
-                src="/images/flux landy.png"
-                alt="Land Rover in Namibian landscape"
+                src="/images/tjaarthero.png"
+                alt="Scenic view of Namibian landscape"
                 fill
                 priority
                 sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-cover"
+                className="object-cover object-center"
                 quality={90}
               />
             </motion.div>
+            <div className="absolute inset-0 ring-1 ring-inset ring-primary/10 rounded-3xl pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-primary/10" />
           </div>
         </motion.div>
       </div>
 
-      <div className="absolute bottom-12 left-1/2 -translate-x-1/2">
+      <div className="absolute bottom-24 left-1/2 -translate-x-1/2">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="flex flex-col items-center gap-2"
+          className="flex flex-col items-center gap-4"
         >
           <span className="text-sm text-primary/60 uppercase tracking-wider">
             SCROLL TO DISCOVER

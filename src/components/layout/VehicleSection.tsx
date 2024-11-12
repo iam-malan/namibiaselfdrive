@@ -179,6 +179,7 @@ const VehicleDropdown = ({ vehicle, isCampingSection }: { vehicle: VehicleProps;
                     </h4>
                     <div className="w-16 h-[1px] bg-primary/30" />
                   </div>
+                  <h2 className="text-[2.5rem] text-primary mb-2">Transparent <span className="text-[#606C38]">Pricing</span></h2>
                   <p className="text-primary/70 font-light">
                     Clear and competitive rates with flexible insurance options
                   </p>

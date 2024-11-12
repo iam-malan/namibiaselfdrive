@@ -116,7 +116,7 @@ export const Hero = () => {
               className="relative w-full h-full"
             >
               <Image
-                src="/images/tjaarthero.png"
+                src="/images/home.jpeg"
                 alt="Scenic view of Namibian landscape"
                 fill
                 priority

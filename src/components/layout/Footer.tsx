@@ -15,8 +15,7 @@ const footerLinks = {
   support: [
     { name: "Contact Us", href: "#contact" },
     { name: "FAQs", href: "#faqs" },
-    { name: "Safety Tips", href: "#safety" },
-    { name: "Travel Insurance", href: "#insurance" }
+    { name: "Safety Tips", href: "#safety" }
   ],
   legal: [
     { name: "Terms & Conditions", href: "#terms" },
@@ -163,8 +162,8 @@ export function Footer() {
             </svg>
             <div>
               <div className="text-primary/60 text-sm">Phone</div>
-              <a href="tel:+264612345678" className="text-primary hover:text-primary-dark transition-colors">
-                +264 61 234 5678
+              <a href="tel:+264813402394" className="text-primary hover:text-primary-dark transition-colors">
+                +264 81 340 2394
               </a>
             </div>
           </div>
@@ -174,8 +173,8 @@ export function Footer() {
             </svg>
             <div>
               <div className="text-primary/60 text-sm">Email</div>
-              <a href="mailto:info@namibiaselfdrive.com" className="text-primary hover:text-primary-dark transition-colors">
-                info@namibiaselfdrive.com
+              <a href="mailto:traveldesk@namibiaselfdrive.com" className="text-primary hover:text-primary-dark transition-colors">
+                traveldesk@namibiaselfdrive.com
               </a>
             </div>
           </div>
@@ -187,7 +186,7 @@ export function Footer() {
             <div>
               <div className="text-primary/60 text-sm">Address</div>
               <address className="text-primary not-italic">
-                123 Safari Street, Windhoek, Namibia
+                1582 Tutungeni, Rundu, Caprivi Strip
               </address>
             </div>
           </div>

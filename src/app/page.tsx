@@ -1,6 +1,5 @@
 import { VehicleSection } from "@/components/layout/VehicleSection";
 import { OptionalExtras } from "@/components/layout/OptionalExtras";
-import { RentalRates } from "@/components/layout/RentalRates";
 import { FAQ } from "@/components/layout/FAQ";
 import { Testimonials } from "@/components/layout/Testimonials";
 import { Header } from "@/components/layout/Header";
@@ -46,10 +45,158 @@ const insuranceOptions = [
   }
 ];
 
-const rentalPeriods = [
-  { season: "December-March (15+ Days)", rate: "N$ 1,597" },
-  { season: "April/May/June/Nov (8-14 Days)", rate: "N$ 1,936" },
-  { season: "July-October (1-7 Days)", rate: "N$ 2,640" }
+// Single Cab Camping rental periods
+const singleCabCampingPeriods = [
+  {
+    duration: "Daily Rental Fee 15 Days+",
+    decToMar: "1380",
+    aprToNov: "1513",
+    julToOct: "1588"
+  },
+  {
+    duration: "Daily Rental Fee 8-14 Days",
+    decToMar: "1538",
+    aprToNov: "1563",
+    julToOct: "1638"
+  },
+  {
+    duration: "Daily Rental Fee 1-7 Days",
+    decToMar: "1592",
+    aprToNov: "1625",
+    julToOct: "1738"
+  }
+];
+
+// Double Cab Camping rental periods
+const doubleCabCampingPeriods = [
+  {
+    duration: "Daily Rental Fee 15 Days+",
+    decToMar: "2054",
+    aprToNov: "2279",
+    julToOct: "2872"
+  },
+  {
+    duration: "Daily Rental Fee 8-14 Days",
+    decToMar: "2173",
+    aprToNov: "2412",
+    julToOct: "3108"
+  },
+  {
+    duration: "Daily Rental Fee 1-7 Days",
+    decToMar: "2307",
+    aprToNov: "2558",
+    julToOct: "3174"
+  }
+];
+
+// Land Cruiser Camping rental periods
+const landCruiserCampingPeriods = [
+  {
+    duration: "Daily Rental Fee 15 Days+",
+    decToMar: "3638",
+    aprToNov: "4142",
+    julToOct: "4752"
+  },
+  {
+    duration: "Daily Rental Fee 8-14 Days",
+    decToMar: "3732",
+    aprToNov: "4232",
+    julToOct: "4881"
+  },
+  {
+    duration: "Daily Rental Fee 1-7 Days",
+    decToMar: "3841",
+    aprToNov: "4355",
+    julToOct: "4991"
+  }
+];
+
+// Single Cab rental periods
+const singleCabPeriods = [
+  { 
+    duration: "Daily Rental Fee 15 Days+",
+    decToMar: "1380",
+    aprToNov: "1405",
+    julToOct: "1480"
+  },
+  {
+    duration: "Daily Rental Fee 8-14 Days",
+    decToMar: "1430",
+    aprToNov: "1458",
+    julToOct: "1535"
+  },
+  {
+    duration: "Daily Rental Fee 1-7 Days",
+    decToMar: "1480",
+    aprToNov: "1480",
+    julToOct: "1580"
+  }
+];
+
+// Double Cab rental periods
+const doubleCabPeriods = [
+  {
+    duration: "Daily Rental Fee 15 Days+",
+    decToMar: "1880",
+    aprToNov: "2013",
+    julToOct: "2388"
+  },
+  {
+    duration: "Daily Rental Fee 8-14 Days",
+    decToMar: "1947",
+    aprToNov: "2146",
+    julToOct: "2573"
+  },
+  {
+    duration: "Daily Rental Fee 1-7 Days",
+    decToMar: "2079",
+    aprToNov: "2279",
+    julToOct: "2793"
+  }
+];
+
+// Land Cruiser rental periods
+const landCruiserPeriods = [
+  {
+    duration: "Daily Rental Fee 15 Days+",
+    decToMar: "3238",
+    aprToNov: "3838",
+    julToOct: "4138"
+  },
+  {
+    duration: "Daily Rental Fee 8-14 Days",
+    decToMar: "3338",
+    aprToNov: "3938",
+    julToOct: "4338"
+  },
+  {
+    duration: "Daily Rental Fee 1-7 Days",
+    decToMar: "3438",
+    aprToNov: "4038",
+    julToOct: "4438"
+  }
+];
+
+// SUV rental periods
+const suvPeriods = [
+  {
+    duration: "Daily Rental Fee 15 Days+",
+    decToMar: "1650",
+    aprToNov: "1711",
+    julToOct: "2046"
+  },
+  {
+    duration: "Daily Rental Fee 8-14 Days",
+    decToMar: "1732",
+    aprToNov: "1832",
+    julToOct: "2167"
+  },
+  {
+    duration: "Daily Rental Fee 1-7 Days",
+    decToMar: "1771",
+    aprToNov: "1953",
+    julToOct: "2288"
+  }
 ];
 
 const campingVehicles = [
@@ -81,7 +228,7 @@ const campingVehicles = [
     ],
     image: "/images/singlehilux.png",
     insuranceOptions,
-    rentalPeriods
+    rentalPeriods: singleCabCampingPeriods
   },
   {
     name: "Toyota Hilux Double Cab 4x4",
@@ -112,7 +259,7 @@ const campingVehicles = [
       "Weekend & Public Holiday Surcharge (N$300)"
     ],
     insuranceOptions,
-    rentalPeriods
+    rentalPeriods: doubleCabCampingPeriods
   },
   {
     name: "Toyota Land Cruiser 79 Double Cab",
@@ -143,14 +290,14 @@ const campingVehicles = [
       "Weekend & Public Holiday Surcharge (N$300)"
     ],
     insuranceOptions,
-    rentalPeriods
+    rentalPeriods: landCruiserCampingPeriods
   },
 ];
 
 const luxuryVehicles = [
   {
-    name: "Luxury 4x4 Single Cab for 1 – 2 Persons",
-    dailyRate: "N$ 1,452 / Day - (15+ Days)",
+    name: "Single Cab Hilux/Isuzu 2 People",
+    dailyRate: "From N$ 1,380 / Day",
     description: "Designed for individual travelers or couples, this 4x4 provides extra privacy and added economy.",
     specifications: [
       "2 Doors",
@@ -175,11 +322,11 @@ const luxuryVehicles = [
     ],
     image: "/images/a.png",
     insuranceOptions,
-    rentalPeriods
+    rentalPeriods: singleCabPeriods
   },
   {
-    name: "Luxury 4x4 Double Cab for 4 – 5 Persons",
-    dailyRate: "N$ 1,452 / Day - (15+ Days)",
+    name: "Double Cab Hilux/Isuzu 4-5 People",
+    dailyRate: "From N$ 1,880 / Day",
     description: "The Toyota Hilux 2.4 is known for its durability and comfort, perfect for Namibia's 4x4 landscape. This vehicle provides ample space and a luxurious driving experience.",
     specifications: [
       "4 Doors",
@@ -205,11 +352,11 @@ const luxuryVehicles = [
     ],
     image: "/images/b.png",
     insuranceOptions,
-    rentalPeriods
+    rentalPeriods: doubleCabPeriods
   },
   {
-    name: "4x4 Adventure Double Cab for 4-7 PAX",
-    dailyRate: "N$ 3,100 / Day - (15+ Days)",
+    name: "Land Cruiser 7 People",
+    dailyRate: "From N$ 3,238 / Day",
     description: "The Land Cruiser is the powerhouse of our luxury fleet, offering increased ground clearance and a pop-up roof, ideal for wildlife viewing and photographic tours.",
     specifications: [
       "3 Doors",
@@ -235,11 +382,11 @@ const luxuryVehicles = [
     ],
     image: "/images/c.png",
     insuranceOptions,
-    rentalPeriods
+    rentalPeriods: landCruiserPeriods
   },
   {
-    name: "Luxury 4x4 SUV for 1 – 5 Persons",
-    dailyRate: "N$ 1,452 / Day - (15+ Days)",
+    name: "SUV",
+    dailyRate: "From N$ 1,650 / Day",
     description: "A popular choice for lodge-hopping, this SUV provides top-notch safety features and maximum comfort for discerning travelers.",
     specifications: [
       "4 Doors",
@@ -265,7 +412,7 @@ const luxuryVehicles = [
     ],
     image: "/images/d.png",
     insuranceOptions,
-    rentalPeriods
+    rentalPeriods: suvPeriods
   }
 ];
 
@@ -332,13 +479,6 @@ export default function Home() {
 
       <section id="optional-extras">
         <OptionalExtras />
-      </section>
-
-      <section id="rental-rates">
-        <RentalRates
-          periods={rentalPeriods}
-          insuranceOptions={insuranceOptions}
-        />
       </section>
 
       <section id="faq">

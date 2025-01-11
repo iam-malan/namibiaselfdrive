@@ -18,8 +18,10 @@ interface InsuranceOption {
 }
 
 interface RentalPeriod {
-  season: string;
-  rate: string;
+  duration: string;
+  decToMar: string;
+  aprToNov: string;
+  julToOct: string;
 }
 
 interface VehicleProps {
@@ -188,13 +190,15 @@ const VehicleDropdown = ({ vehicle, isCampingSection }: { vehicle: VehicleProps;
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                   {/* Rental Rates */}
                   <div className="feature-card bg-white/50">
-                    <h5 className="text-lg text-primary mb-4">Rental Rates by Season</h5>
+                    <h5 className="text-lg text-primary mb-4">Standard Rates 2025</h5>
                     <div className="overflow-x-auto">
                       <table className="w-full">
                         <thead>
                           <tr className="border-b border-primary/20">
-                            <th className="py-3 px-4 text-left text-primary">Season</th>
-                            <th className="py-3 px-4 text-right text-primary">Daily Rate</th>
+                            <th className="py-3 px-4 text-left text-primary">Duration</th>
+                            <th className="py-3 px-4 text-right text-primary">Dec24 to Mar25</th>
+                            <th className="py-3 px-4 text-right text-primary">Apr/May/Jun/Nov</th>
+                            <th className="py-3 px-4 text-right text-primary">Jul to Oct</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -203,8 +207,10 @@ const VehicleDropdown = ({ vehicle, isCampingSection }: { vehicle: VehicleProps;
                               key={index}
                               className="border-b border-primary/10 last:border-0"
                             >
-                              <td className="py-3 px-4 text-primary/80">{period.season}</td>
-                              <td className="py-3 px-4 text-right text-primary/80">{period.rate}</td>
+                              <td className="py-3 px-4 text-primary/80">{period.duration}</td>
+                              <td className="py-3 px-4 text-right text-primary/80 whitespace-nowrap">N$ {period.decToMar}</td>
+                              <td className="py-3 px-4 text-right text-primary/80 whitespace-nowrap">N$ {period.aprToNov}</td>
+                              <td className="py-3 px-4 text-right text-primary/80 whitespace-nowrap">N$ {period.julToOct}</td>
                             </tr>
                           ))}
                         </tbody>

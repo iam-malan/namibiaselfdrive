@@ -3,8 +3,10 @@
 import { motion } from 'framer-motion';
 
 interface RentalPeriod {
-  season: string;
-  rate: string;
+  duration: string;
+  decToMar: string;
+  aprToNov: string;
+  julToOct: string;
 }
 
 interface InsuranceOption {
@@ -54,25 +56,27 @@ export const RentalRates = ({ periods, insuranceOptions }: RentalRatesProps) => 
             transition={{ duration: 0.6 }}
           >
             <div className="feature-card">
-              <h3 className="text-2xl text-primary mb-6">Rental Rates by Season</h3>
+              <h3 className="text-2xl text-primary mb-6">Standard Rates 2025</h3>
               <div className="overflow-x-auto">
                 <table className="w-full">
                   <thead>
                     <tr className="border-b border-primary/20">
-                      <th className="py-4 px-4 text-left text-primary">Season</th>
-                      <th className="py-4 px-4 text-right text-primary">Daily Rate</th>
+                      <th className="py-3 px-4 text-left text-primary">Duration</th>
+                      <th className="py-3 px-4 text-right text-primary">Dec24 to Mar25</th>
+                      <th className="py-3 px-4 text-right text-primary">Apr/May/Jun/Nov</th>
+                      <th className="py-3 px-4 text-right text-primary">Jul to Oct</th>
                     </tr>
                   </thead>
                   <tbody>
                     {periods.map((period, index) => (
                       <tr
-                        key={period.season}
+                        key={index}
                         className="border-b border-primary/10 last:border-0"
                       >
-                        <td className="py-4 px-4 text-primary/80">{period.season}</td>
-                        <td className="py-4 px-4 text-right text-primary/80">
-                          {period.rate}
-                        </td>
+                        <td className="py-3 px-4 text-primary/80">{period.duration}</td>
+                        <td className="py-3 px-4 text-right text-primary/80 whitespace-nowrap">N$ {period.decToMar}</td>
+                        <td className="py-3 px-4 text-right text-primary/80 whitespace-nowrap">N$ {period.aprToNov}</td>
+                        <td className="py-3 px-4 text-right text-primary/80 whitespace-nowrap">N$ {period.julToOct}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -107,10 +111,10 @@ export const RentalRates = ({ periods, insuranceOptions }: RentalRatesProps) => 
                         className="border-b border-primary/10 last:border-0"
                       >
                         <td className="py-3 px-1 sm:px-2 text-primary/80">{option.name}</td>
-                        <td className="py-3 px-1 sm:px-2 text-right text-primary/80">
+                        <td className="py-3 px-1 sm:px-2 text-right text-primary/80 whitespace-nowrap">
                           {option.dailyRate}
                         </td>
-                        <td className="py-3 px-1 sm:px-2 text-right text-primary/80">
+                        <td className="py-3 px-1 sm:px-2 text-right text-primary/80 whitespace-nowrap">
                           {option.deposit}
                         </td>
                         <td className="py-3 px-1 sm:px-2 text-center text-primary/80">

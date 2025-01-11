@@ -49,8 +49,8 @@ export const ContactPage = () => {
               </svg>
             </div>
             <h3 className="text-xl text-primary mb-3">Email Us</h3>
-            <a href="mailto:info@namibiaselfdrive.com" className="text-primary/80 hover:text-primary transition-colors">
-              info@namibiaselfdrive.com
+            <a href="mailto:traveldesk@namibiaselfdrive.com" className="text-primary/80 hover:text-primary transition-colors">
+              traveldesk@namibiaselfdrive.com
             </a>
           </motion.div>
 
@@ -67,9 +67,28 @@ export const ContactPage = () => {
               </svg>
             </div>
             <h3 className="text-xl text-primary mb-3">Call Us</h3>
-            <a href="tel:+264123456789" className="text-primary/80 hover:text-primary transition-colors">
-              +264 12 345 6789
+            <a href="tel:+264813402394" className="text-primary/80 hover:text-primary transition-colors">
+              +264 81 340 2394
             </a>
+          </motion.div>
+
+          {/* Address */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="bg-white/5 backdrop-blur-sm rounded-xl p-8 border border-primary/10 hover:border-primary/20 transition-colors text-center group"
+          >
+            <div className="mb-4">
+              <svg className="w-8 h-8 mx-auto text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+            </div>
+            <h3 className="text-xl text-primary mb-3">Visit Us</h3>
+            <address className="text-primary/80 not-italic">
+              1582 Tutungeni, Rundu, Caprivi Strip
+            </address>
           </motion.div>
 
           {/* Social Media */}

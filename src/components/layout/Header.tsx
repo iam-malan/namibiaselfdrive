@@ -51,9 +51,8 @@ export const Header = () => {
 
   const navItems = [
     ['01', 'VEHICLES', 'camping-vehicles'],
-    ['02', 'PRICING', 'rental-rates'],
-    ['03', 'FAQ', 'faq'],
-    ['04', 'TESTIMONIALS', 'testimonials']
+    ['02', 'FAQ', 'faq'],
+    ['03', 'TESTIMONIALS', 'testimonials']
   ];
 
   return (

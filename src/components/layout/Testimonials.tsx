@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { GridBackground } from "./GridBackground";
 import Image from "next/image";
+import Link from "next/link";
 
 const testimonials = [
   {
@@ -196,8 +197,8 @@ export function Testimonials() {
             variants={itemVariants}
             className="mt-16 text-center"
           >
-            <a 
-              href="#book"
+            <Link 
+              href="/contact"
               className="btn btn-primary inline-flex items-center gap-2 group"
             >
               <span>Start Your Adventure</span>
@@ -214,7 +215,7 @@ export function Testimonials() {
                   d="M17 8l4 4m0 0l-4 4m4-4H3"
                 />
               </svg>
-            </a>
+            </Link>
           </motion.div>
         </motion.div>
       </div>

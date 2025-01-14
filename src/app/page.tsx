@@ -410,7 +410,7 @@ const luxuryVehicles = [
       "Contract Fee (N$150)",
       "Weekend & Public Holiday Surcharge (N$300)"
     ],
-    image: "/images/d.png",
+    image: "/images/fortuner.jpeg",
     insuranceOptions,
     rentalPeriods: suvPeriods
   }

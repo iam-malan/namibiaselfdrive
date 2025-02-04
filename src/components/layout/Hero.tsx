@@ -6,7 +6,7 @@ import Image from 'next/image';
 export const Hero = () => {
   return (
     <div className="min-h-screen relative flex items-center">
-      <div className="content-wrapper grid grid-cols-1 lg:grid-cols-2 gap-12 py-24">
+      <div className="content-wrapper grid grid-cols-1 lg:grid-cols-2 gap-16 py-32">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -105,28 +105,51 @@ export const Hero = () => {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
-          className="relative"
+          className="relative h-full flex items-center"
         >
-          <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br from-primary/5 to-primary/10">
-            <div className="absolute inset-0 bg-gradient-to-tr from-primary/30 via-primary/20 to-transparent z-10" />
-            <motion.div
-              initial={{ scale: 1.2 }}
-              animate={{ scale: 1 }}
-              transition={{ duration: 1.5 }}
-              className="relative w-full h-full"
-            >
-              <Image
-                src="/images/home.jpeg"
-                alt="Scenic view of Namibian landscape"
-                fill
-                priority
-                sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-cover object-center"
-                quality={90}
-              />
-            </motion.div>
-            <div className="absolute inset-0 ring-1 ring-inset ring-primary/10 rounded-3xl pointer-events-none" />
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-primary/10" />
+          <div className="grid grid-cols-2 gap-6 w-full">
+            <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br from-primary/5 to-primary/10">
+              <div className="absolute inset-0 bg-gradient-to-tr from-primary/30 via-primary/20 to-transparent z-10" />
+              <motion.div
+                initial={{ scale: 1.2 }}
+                animate={{ scale: 1 }}
+                transition={{ duration: 1.5 }}
+                className="relative w-full h-full"
+              >
+                <Image
+                  src="/images/opener1.jpeg"
+                  alt="Scenic view of Namibian landscape"
+                  fill
+                  priority
+                  sizes="(max-width: 768px) 100vw, 25vw"
+                  className="object-cover object-center"
+                  quality={90}
+                />
+              </motion.div>
+              <div className="absolute inset-0 ring-1 ring-inset ring-primary/10 rounded-3xl pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-primary/10" />
+            </div>
+            <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br from-primary/5 to-primary/10">
+              <div className="absolute inset-0 bg-gradient-to-tr from-primary/30 via-primary/20 to-transparent z-10" />
+              <motion.div
+                initial={{ scale: 1.2 }}
+                animate={{ scale: 1 }}
+                transition={{ duration: 1.5 }}
+                className="relative w-full h-full"
+              >
+                <Image
+                  src="/images/opener2.jpeg"
+                  alt="Scenic view of Namibian landscape"
+                  fill
+                  priority
+                  sizes="(max-width: 768px) 100vw, 25vw"
+                  className="object-cover object-center"
+                  quality={90}
+                />
+              </motion.div>
+              <div className="absolute inset-0 ring-1 ring-inset ring-primary/10 rounded-3xl pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-primary/10" />
+            </div>
           </div>
         </motion.div>
       </div>

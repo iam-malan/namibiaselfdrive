@@ -18,10 +18,9 @@ const footerLinks = {
     { name: "Safety Tips", href: "#safety" }
   ],
   legal: [
-    { name: "Terms & Conditions", href: "#terms" },
-    { name: "Privacy Policy", href: "#privacy" },
-    { name: "Cookie Policy", href: "#cookies" },
-    { name: "Rental Agreement", href: "#agreement" }
+    { name: "Terms & Conditions", href: "/legal/terms" },
+    { name: "Privacy Policy", href: "/legal/privacy" },
+    { name: "Cookie Policy", href: "/legal/cookies" }
   ]
 };
 

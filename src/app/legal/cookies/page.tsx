@@ -90,7 +90,7 @@ export default function CookiePolicyPage() {
 
           <h2>7. Your Consent</h2>
           <p>
-            When you first visit our website, you will be shown a cookie consent banner. By clicking "Accept," you consent to our use of cookies as described in this policy. You can change your cookie preferences at any time through your browser settings.
+            When you first visit our website, you will be shown a cookie consent banner. By clicking &quot;Accept,&quot; you consent to our use of cookies as described in this policy. You can change your cookie preferences at any time through your browser settings.
           </p>
 
           <h2>8. Updates to This Policy</h2>

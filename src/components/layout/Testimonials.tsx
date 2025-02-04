@@ -135,7 +135,7 @@ export function Testimonials() {
 
                     {/* Quote */}
                     <p className="text-primary/80 text-lg leading-relaxed mb-8 flex-grow">
-                      "{testimonial.quote}"
+                      &quot;{testimonial.quote}&quot;
                     </p>
 
                     {/* Image and Author */}

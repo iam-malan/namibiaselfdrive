@@ -23,7 +23,7 @@ export default function PrivacyPage() {
           </p>
           <ul>
             <li>Name and contact information</li>
-            <li>Driver's license details</li>
+            <li>Driver&apos;s license details</li>
             <li>Payment information</li>
             <li>Travel preferences and history</li>
             <li>Communication records</li>
@@ -90,7 +90,7 @@ export default function PrivacyPage() {
             Your information may be transferred to and processed in countries other than your country of residence. We ensure appropriate safeguards are in place for such transfers.
           </p>
 
-          <h2>9. Children's Privacy</h2>
+          <h2>9. Children&apos;s Privacy</h2>
           <p>
             Our services are not intended for individuals under the age of 18. We do not knowingly collect personal information from children.
           </p>

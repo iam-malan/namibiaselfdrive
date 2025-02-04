@@ -24,7 +24,7 @@ export default function TermsPage() {
           <h2>3. Vehicle Rental Terms</h2>
           <p>
             3.1. All vehicle rentals are subject to availability and confirmation.<br />
-            3.2. A valid driver's license and additional identification are required.<br />
+            3.2. A valid driver&apos;s license and additional identification are required.<br />
             3.3. Minimum age requirements and driving experience restrictions may apply.<br />
             3.4. Full insurance coverage is mandatory for all rentals.
           </p>

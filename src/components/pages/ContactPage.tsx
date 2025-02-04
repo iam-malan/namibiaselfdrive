@@ -31,7 +31,7 @@ export const ContactPage = () => {
             Get in <span className="text-primary">Touch</span>
           </h1>
           <p className="text-xl text-primary/80 font-light leading-relaxed max-w-3xl mx-auto">
-            Ready to start your Namibian adventure? We're here to help you plan your perfect self-drive experience.
+            Ready to start your Namibian adventure? We&apos;re here to help you plan your perfect self-drive experience.
           </p>
         </motion.div>
 

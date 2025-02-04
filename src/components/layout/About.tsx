@@ -85,7 +85,7 @@ export function About() {
                   Tjaart Smuts
                 </h3>
                 <p className="text-[#4A5D23]/80">
-                  Raised amidst Namibia's natural wonders, Tjaart brings a wealth of knowledge 
+                  Raised amidst Namibia&apos;s natural wonders, Tjaart brings a wealth of knowledge
                   and a personal passion to every tour he leads.
                 </p>
               </div>

@@ -46,10 +46,10 @@ export function TourHighlights() {
             <div className="w-24 h-[1px] bg-[#4A5D23]" />
           </div>
           <h1 className="mb-6">
-            Discover Namibia's Wonders
+            Discover Namibia&apos;s Wonders
           </h1>
           <p className="text-lg text-[#4A5D23]/80 max-w-2xl mx-auto">
-            Embark on a journey through Namibia's most breathtaking destinations, 
+            Embark on a journey through Namibia&apos;s most breathtaking destinations,
             each offering unique experiences and unforgettable memories.
           </p>
         </motion.div>

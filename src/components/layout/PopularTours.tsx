@@ -55,8 +55,8 @@ export function PopularTours() {
             Your Namibian Adventure, Fully Customized
           </h1>
           <p className="text-lg text-[#4A5D23]/80 max-w-2xl mx-auto">
-            Choose from curated routes or let us create a tour that's uniquely yours. 
-            From breathtaking landscapes to cultural encounters, we'll guide you on a 
+            Choose from curated routes or let us create a tour that&apos;s uniquely yours.
+            From breathtaking landscapes to cultural encounters, we&apos;ll guide you on a
             journey that reflects your sense of adventure.
           </p>
         </motion.div>

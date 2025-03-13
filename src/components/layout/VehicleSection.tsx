@@ -9,14 +9,6 @@ interface VehicleFeature {
   items: string[];
 }
 
-interface InsuranceOption {
-  name: string;
-  dailyRate: string;
-  deposit: string;
-  glassCover: string;
-  tyresCover: string;
-}
-
 interface RentalPeriod {
   duration: string;
   decToMar: string;
@@ -34,7 +26,6 @@ interface VehicleProps {
   optionalExtras?: { name: string; price: string }[];
   rentalIncludes: string[];
   image?: string;
-  insuranceOptions: InsuranceOption[];
   rentalPeriods: RentalPeriod[];
 }
 
@@ -171,25 +162,25 @@ const VehicleDropdown = ({ vehicle, isCampingSection }: { vehicle: VehicleProps;
                 </div>
               )}
 
-              {/* Rental Rates & Insurance Section */}
+              {/* Rental Rates Section */}
               <div className="pt-8 border-t border-primary/10">
                 <div className="text-center mb-8">
                   <div className="flex items-center justify-center gap-4 mb-4">
                     <div className="w-16 h-[1px] bg-primary/30" />
                     <h4 className="text-lg tracking-wider text-primary font-light uppercase">
-                      Rental Rates & Insurance
+                      Rental Rates
                     </h4>
                     <div className="w-16 h-[1px] bg-primary/30" />
                   </div>
                   <h2 className="text-[2.5rem] text-primary mb-2">Transparent <span className="text-[#606C38]">Pricing</span></h2>
                   <p className="text-primary/70 font-light">
-                    Clear and competitive rates with flexible insurance options
+                    Clear and competitive rates for every season
                   </p>
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div>
                   {/* Rental Rates */}
-                  <div className="feature-card bg-white/50">
+                  <div className="feature-card bg-white/50 w-full">
                     <h5 className="text-lg text-primary mb-4">Standard Rates 2025</h5>
                     <div className="overflow-x-auto">
                       <table className="w-full">
@@ -211,38 +202,6 @@ const VehicleDropdown = ({ vehicle, isCampingSection }: { vehicle: VehicleProps;
                               <td className="py-3 px-4 text-right text-primary/80 whitespace-nowrap">N$ {period.decToMar}</td>
                               <td className="py-3 px-4 text-right text-primary/80 whitespace-nowrap">N$ {period.aprToNov}</td>
                               <td className="py-3 px-4 text-right text-primary/80 whitespace-nowrap">N$ {period.julToOct}</td>
-                            </tr>
-                          ))}
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-
-                  {/* Insurance Options */}
-                  <div className="feature-card bg-white/50">
-                    <h5 className="text-lg text-primary mb-4">Insurance Options</h5>
-                    <div className="overflow-x-auto -mx-4 sm:mx-0">
-                      <table className="w-full text-sm sm:text-base">
-                        <thead>
-                          <tr className="border-b border-primary/20">
-                            <th className="py-3 px-1 sm:px-2 text-left text-primary">Option</th>
-                            <th className="py-3 px-1 sm:px-2 text-right text-primary">Rate</th>
-                            <th className="py-3 px-1 sm:px-2 text-right text-primary">Deposit</th>
-                            <th className="py-3 px-1 sm:px-2 text-center text-primary">Glass</th>
-                            <th className="py-3 px-1 sm:px-2 text-center text-primary">Tyres</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {vehicle.insuranceOptions.map((option, index) => (
-                            <tr
-                              key={index}
-                              className="border-b border-primary/10 last:border-0"
-                            >
-                              <td className="py-3 px-1 sm:px-2 text-primary/80">{option.name}</td>
-                              <td className="py-3 px-1 sm:px-2 text-right text-primary/80">{option.dailyRate}</td>
-                              <td className="py-3 px-1 sm:px-2 text-right text-primary/80">{option.deposit}</td>
-                              <td className="py-3 px-1 sm:px-2 text-center text-primary/80">{option.glassCover}</td>
-                              <td className="py-3 px-1 sm:px-2 text-center text-primary/80">{option.tyresCover}</td>
                             </tr>
                           ))}
                         </tbody>

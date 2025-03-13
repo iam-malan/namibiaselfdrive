@@ -51,8 +51,7 @@ export const Header = () => {
 
   const navItems = [
     ['01', 'VEHICLES', 'camping-vehicles'],
-    ['02', 'FAQ', 'faq'],
-    ['03', 'TESTIMONIALS', 'testimonials']
+    ['02', 'FAQ', 'faq']
   ];
 
   return (
@@ -98,7 +97,7 @@ export const Header = () => {
             </motion.a>
           ))}
           <Link href="/contact" className="nav-link">
-            <span className="nav-number">05</span>
+            <span className="nav-number">03</span>
             <span className="nav-text">CONTACT</span>
             <span className="nav-arrow">›</span>
           </Link>
@@ -182,11 +181,11 @@ export const Header = () => {
                     <span className="nav-arrow">›</span>
                   </a>
                 ))}
-                <Link 
+                <Link
                   href="/contact"
                   className="nav-link text-base"
                 >
-                  <span className="nav-number">05</span>
+                  <span className="nav-number">03</span>
                   <span className="nav-text">CONTACT</span>
                   <span className="nav-arrow">›</span>
                 </Link>

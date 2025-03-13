@@ -1,7 +1,6 @@
 import { VehicleSection } from "@/components/layout/VehicleSection";
 import { OptionalExtras } from "@/components/layout/OptionalExtras";
 import { FAQ } from "@/components/layout/FAQ";
-import { Testimonials } from "@/components/layout/Testimonials";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/layout/Hero";
@@ -483,10 +482,6 @@ export default function Home() {
 
       <section id="faq">
         <FAQ faqs={faqs} />
-      </section>
-
-      <section id="testimonials">
-        <Testimonials />
       </section>
 
       <Footer />
